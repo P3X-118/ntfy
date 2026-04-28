@@ -43,6 +43,7 @@ ADD ./server ./server
 ADD ./user ./user
 ADD ./util ./util
 ADD ./payments ./payments
+ADD ./s3 ./s3
 ADD ./db ./db
 ADD ./message ./message
 ADD ./model ./model
