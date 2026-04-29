@@ -30,6 +30,8 @@ RUN make docs-build
 ADD ./web/package.json ./web/package-lock.json ./web/
 RUN --mount=type=cache,target=/root/.npm make web-deps
 ADD ./web ./web
+# SGC: ship only the English locale; drop every other static/langs/*.json
+RUN find ./web/public/static/langs -type f -name '*.json' ! -name 'en.json' -delete
 RUN make web-build
 
 # cli & server
